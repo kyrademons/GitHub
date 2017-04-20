@@ -1,0 +1,34 @@
+﻿@model IEnumerable<web.sanpham>
+
+<div class="feature-grids">
+
+    @foreach (var i in Model)
+    {
+
+       
+            <div class="col-md-3 feature-grid jewel">
+                <a href="product.html">
+                    <img src="@i.imgphoto" alt="" />
+                    <div class="arrival-info">
+                        <h4>@i.TenSP</h4>
+                        <p>@i.Gia</p>
+
+                    </div>
+                    <div class="viw">
+                        <a href="product.html"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>Quick View</a>
+                    </div>
+                    <div class="shrt">
+                        <a href="product.html"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>Shortlist</a>
+                    </div>
+                </a>
+            </div>
+
+        if ((@i.id % 4) == 0)
+        {
+            @:<div class="clearfix"></div>
+            @:</div>
+            @:<div class="feature-grids">
+         }
+    }
+
+</div>
